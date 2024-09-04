@@ -468,6 +468,12 @@ Number >> mm [
 ]
 
 { #category : #'*Units-Core' }
+Number >> ms [
+
+	^ self units: #milliseconds
+]
+
+{ #category : #'*Units-Core' }
 Number >> multiplyByUnit: unitValue [
 
 	^unitValue class
@@ -678,4 +684,10 @@ Number >> yd [
 Number >> µg [
 
 	^ self units: #microgram
+]
+
+{ #category : #'*Units-Core' }
+Number >> µs [
+
+	^ self units: #microseconds
 ]

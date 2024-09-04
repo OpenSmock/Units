@@ -594,6 +594,12 @@ Unit class >> micrograms [
 	^self microgram
 ]
 
+{ #category : #'time units' }
+Unit class >> microseconds [
+
+	^ self second prefixedBy: 'micro'
+]
+
 { #category : #'length units' }
 Unit class >> mile [
 
