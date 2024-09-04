@@ -329,6 +329,24 @@ Number >> km [
 ]
 
 { #category : #'*Units-Core' }
+Number >> kmh [
+
+	^ self units: #kmh
+]
+
+{ #category : #'*Units-Core' }
+Number >> knot [
+
+	^ self units: #knot
+]
+
+{ #category : #'*Units-Core' }
+Number >> knots [
+
+	^ self knot
+]
+
+{ #category : #'*Units-Core' }
 Number >> lb [
 
 	^self pound
@@ -460,6 +478,36 @@ Number >> multiplyByUnit: unitValue [
 { #category : #'*Units-Core' }
 Number >> nV [
 	^self units: #nanovolt
+]
+
+{ #category : #'*Units-Core' }
+Number >> nauticMile [
+
+	^ self nauticMiles 
+]
+
+{ #category : #'*Units-Core' }
+Number >> nauticMiles [
+
+	^ self units: #nauticMiles
+]
+
+{ #category : #'*Units-Core' }
+Number >> nauticalMile [
+
+	^ self nauticMile
+]
+
+{ #category : #'*Units-Core' }
+Number >> nauticalMiles [
+
+	^ self units: #nauticMiles
+]
+
+{ #category : #'*Units-Core' }
+Number >> nm [
+
+	^ self units: #nm
 ]
 
 { #category : #'*Units-Core' }

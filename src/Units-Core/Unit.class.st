@@ -474,6 +474,24 @@ Unit class >> km [
 	^self kilometre
 ]
 
+{ #category : #'length units' }
+Unit class >> kmh [
+
+	^ self kilometre / self h
+]
+
+{ #category : #'length units' }
+Unit class >> knot [
+
+	^ self nauticMiles  / self h
+]
+
+{ #category : #'length units' }
+Unit class >> knots [
+
+	^ self knot
+]
+
 { #category : #'mass units' }
 Unit class >> lb [
 
@@ -704,6 +722,18 @@ Unit class >> nanovolt [
 	^ self volt prefixedBy: 'nano'
 ]
 
+{ #category : #'length units' }
+Unit class >> nauticMile [
+
+	^ self nauticMiles
+]
+
+{ #category : #'length units' }
+Unit class >> nauticMiles [
+
+	^ NamedUnit named: 'nauticalmile'
+]
+
 { #category : #'miscellaneous units' }
 Unit class >> newton [
 
@@ -713,6 +743,12 @@ Unit class >> newton [
 { #category : #'miscellaneous units' }
 Unit class >> newtons [
 	^NamedUnit named: 'newtons'
+]
+
+{ #category : #'length units' }
+Unit class >> nm [
+
+	^ self nauticMiles
 ]
 
 { #category : #'mass units' }
