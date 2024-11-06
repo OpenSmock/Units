@@ -187,6 +187,12 @@ Unit class >> coulombs [
 	^self coulomb
 ]
 
+{ #category : 'power units' }
+Unit class >> dB [
+
+	^ self decibel
+]
+
 { #category : 'time units' }
 Unit class >> day [
 
@@ -197,6 +203,12 @@ Unit class >> day [
 Unit class >> days [
 
 	^ self day
+]
+
+{ #category : 'power units' }
+Unit class >> decibel [
+
+	^ NamedUnit named: 'decibel'
 ]
 
 { #category : 'miscellaneous units' }
@@ -593,6 +605,12 @@ Unit class >> microgram [
 Unit class >> micrograms [
 
 	^self microgram
+]
+
+{ #category : 'time units' }
+Unit class >> microsecond [
+
+	^ self microseconds
 ]
 
 { #category : 'time units' }
