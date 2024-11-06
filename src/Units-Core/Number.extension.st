@@ -153,6 +153,18 @@ Number >> cm [
 ]
 
 { #category : '*Units-Core' }
+Number >> dB [
+
+	^ self decibel
+]
+
+{ #category : '*Units-Core' }
+Number >> decibel [
+
+	^ self units: #decibel
+]
+
+{ #category : '*Units-Core' }
 Number >> degreeCelsius [
 
 	^self units: #degreeCelsius

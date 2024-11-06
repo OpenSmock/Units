@@ -197,7 +197,13 @@ NamedUnit class >> initializeOtherUnits [
 		name: 'watt'
 		pluralName: 'watts'
 		value: (1 units: ((Unit ampere) * (Unit volt))).
-		
+	self
+		abbreviation: 'dB'
+		name: 'decibel'
+		pluralName: 'decibels'
+		value: ((10 raisedTo: ((1 - 30) / 10)) units: Unit watt).
+	self flag:'labordep: how to convert this unit to watt because this is not a *?'.
+	
 	DerivedUnit
 		abbreviation: 'deg'
 		name: 'arcdegree'
