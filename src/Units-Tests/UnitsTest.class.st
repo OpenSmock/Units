@@ -1,10 +1,11 @@
 Class {
-	#name : #UnitsTest,
-	#superclass : #TestCase,
-	#category : #'Units-Tests'
+	#name : 'UnitsTest',
+	#superclass : 'TestCase',
+	#category : 'Units-Tests',
+	#package : 'Units-Tests'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testAdd [
 	"Adding or subtracting units does appropriate conversions."
 	| u |
@@ -13,14 +14,14 @@ UnitsTest >> testAdd [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testCompare [
 	"Unit values can also be compared (provided they are dimensionally consistent."
 	self assert: ((1 units: #inch) < (3 units: #centimetre)).
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testConvert [
 	"You can also explicitly convert values."
 	| u |
@@ -30,7 +31,7 @@ UnitsTest >> testConvert [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testCreate [
 	"Create unit values by sending #units: to a number."
 	| u |
@@ -39,7 +40,7 @@ UnitsTest >> testCreate [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testCreateAdditionalUnit [
 	"Creating additional units is easy:"
 	| microfortnight |
@@ -54,7 +55,7 @@ UnitsTest >> testCreateAdditionalUnit [
 	self assert: ((1 units: microfortnight) baseUnits asString = '(756/625) seconds').
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testDivide [
 	"You can divide unit values."
 	| u |
@@ -63,7 +64,41 @@ UnitsTest >> testDivide [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
+UnitsTest >> testEqual [
+	"Test different equality"
+
+	self assert: 2 g equals: 2.
+	self deny: 2 g equals: 3.
+	self deny: 2 L equals: 2 g.
+	self
+		assertCollection: {
+				1 g.
+				2 g.
+				3 g.
+				4 g }
+		hasSameElements: {
+				3 g.
+				4 g.
+				2 g.
+				1g }.
+	self
+		assertCollection: {
+				1 g.
+				2 g.
+				3 g.
+				'toto' }
+		includesAll: { 'toto' }.
+	self
+		denyCollection: {
+				1 g.
+				2 g.
+				3 g.
+				4 g }
+		includesAny: { 'toto' }
+]
+
+{ #category : 'testing' }
 UnitsTest >> testExpand [
 	"You can expand 'derived' units  into base SI units."
 	| u |
@@ -76,7 +111,7 @@ UnitsTest >> testExpand [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testNewton [
 	"You can use 'derived' units such as the newton."
 	| u |
@@ -85,12 +120,12 @@ UnitsTest >> testNewton [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testReduce [
 	self assert: 5 km / 5000 m equals: 1
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 UnitsTest >> testSqrt [
 	"if we take the root of a squared unit, we need to make sure to reduce the 
 	unit and not use a ComplexUnit"

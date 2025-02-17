@@ -78,7 +78,8 @@ UnitValue >> < number [
 
 { #category : 'comparing' }
 UnitValue >> = number [
-	^number equalFromUnit: self
+
+	^ number equalFromUnit: self
 ]
 
 { #category : 'arithmetic' }
